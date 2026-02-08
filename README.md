@@ -1,6 +1,7 @@
 #  Task Management Application
 
-Task Manager is a full-stack Flask application designed for organized, multi-user task management. It features a modern, "glassmorphism" UI, real-time progress tracking, and a hierarchical task-subtask structure.
+**Task Manager** is a full-stack Flask-based task management application built for organized and efficient multi-user task tracking.  
+It supports **secure authentication**, **hierarchical tasks with subtasks**, **deadline management**, and **real-time progress tracking** with a modern responsive UI.
 ---
 
 ## ✨ Features
@@ -64,18 +65,6 @@ pip install flask flask-sqlalchemy flask-login werkzeug
 ---
 
 ### 5️⃣ Initialize the Database (Fresh Start)
-
-Since this project includes **Subtasks + End Dates**, it is recommended to delete the old database if it exists:
-
-**Mac/Linux**
-```bash
-rm tasks.db
-```
-
-**Windows**
-```bash
-del tasks.db
-```
 
 The database will be automatically created when you run the application.
 
