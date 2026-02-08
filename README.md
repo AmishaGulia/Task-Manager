@@ -1,7 +1,7 @@
-# Task-Manager
+# ✅ StepWise - Task Management Application
 
-**Task Flow** is a full-stack Flask application designed for organized, multi-user task management.  
-It features a modern **glassmorphism UI**, **real-time progress tracking**, and a **hierarchical task → subtask structure**.
+**StepWise** is a full-stack Flask-based task management application built for organized and efficient multi-user task tracking.  
+It supports **secure authentication**, **hierarchical tasks with subtasks**, **deadline management**, and **real-time progress tracking** with a modern responsive UI.
 
 ---
 
@@ -9,7 +9,7 @@ It features a modern **glassmorphism UI**, **real-time progress tracking**, and 
 
 - 🔐 **User Authentication:** Secure Signup/Login system with password hashing.
 - 🗂️ **Hierarchical Tasks:** Create main tasks with detailed descriptions and nested sub-steps (subtasks).
-- 📊 **Progress Tracking:** Dynamic progress bar that updates as you complete tasks.
+- 📊 **Progress Tracking:** Dynamic progress bar that updates as tasks are completed.
 - 🔃 **Smart Sorting:** Automatic sorting by creation date (newest first).
 - 📅 **Deadline Management:** Optional end dates for time-sensitive goals.
 - ⚡ **Real-time Interaction:** AJAX-powered updates (add/delete/toggle) without page reloads.
@@ -30,21 +30,22 @@ It features a modern **glassmorphism UI**, **real-time progress tracking**, and 
 ## 🚀 Getting Started
 
 ### 1️⃣ Prerequisites
-Make sure you have **Python 3.8+** installed.
+Ensure you have **Python 3.8+** installed.
 
 ---
 
 ### 2️⃣ Installation
-
-Clone the project or navigate into your project folder:
+Navigate to your project folder:
 
 ```bash
-cd task_ass 
-
+cd task_ass
+```
 
 ---
 
-##3️⃣ Setup Virtual Environment (Optional but Recommended)
+### 3️⃣ Setup Virtual Environment (Optional but Recommended)
+
+```bash
 python -m venv venv
 
 # Activate on Windows:
@@ -52,36 +53,65 @@ venv\Scripts\activate
 
 # Activate on Mac/Linux:
 source venv/bin/activate
+```
 
 ---
 
-##4️⃣ Install Dependencies
+### 4️⃣ Install Dependencies
+
+```bash
 pip install flask flask-sqlalchemy flask-login werkzeug
+```
+
 ---
-##▶️ Run the Application
+
+### 5️⃣ Initialize the Database (Fresh Start)
+
+Since this project includes **Subtasks + End Dates**, it is recommended to delete the old database if it exists:
+
+**Mac/Linux**
+```bash
+rm tasks.db
+```
+
+**Windows**
+```bash
+del tasks.db
+```
+
+The database will be automatically created when you run the application.
+
+---
+
+## ▶️ Run the Application
+
+```bash
 python app.py
+```
+
+Now open your browser and go to:
+
+```
+http://127.0.0.1:5000
+```
 
 ---
 
-##👤 How It Works
+## 👤 How It Works
 
--Signup: Create a new account to access your private dashboard.
-
--Manage Tasks:
-
--Enter a Title and Description
-
--Set an optional Deadline
-
--Click the "+" button inside a task card to add sub-steps
-
--Toggle the checkbox to complete subtasks
-
--Click Done to finish the main task
+- **Signup:** Create a new account to access your private dashboard.
+- **Manage Tasks:**
+  - Enter a **Title** and **Description**
+  - Set an optional **Deadline**
+  - Click the **"+" button** inside a task card to add sub-steps
+  - Toggle the checkbox to complete subtasks
+  - Click **Done** to finish the main task
 
 ---
 
-##📂 Project Structure
+## 📂 Project Structure
+
+```plaintext
 task_ass/
 ├── app.py              # Flask server & API routes
 ├── tasks.db            # SQLite database (auto-generated)
@@ -92,4 +122,10 @@ task_ass/
     ├── login.html      # Authentication UI
     ├── signup.html     # Registration UI
     └── index.html      # Main Dashboard
+```
 
+---
+
+## 📜 License
+
+This project is open-source and free to use for learning and development.

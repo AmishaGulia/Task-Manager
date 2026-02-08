@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Flow - Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+
+    <div class="dashboard-wrapper">
+        <header class="glass-header">
+            <div>
+                <h1>Hello, {{ user.username }}!</h1>
+                <p id="task-count-text">Calculating your progress...</p>
+            </div>
+            <a href="/logout" class="logout-btn">Logout</a>
+        </header>
+
+        <div class="progress-section">
+            <div class="progress-track">
+                <div class="progress-fill-logic" style="width: {{ (completed/total*100) if total > 0 else 0 }}%;"></div>
+            </div>
+        </div>
+
+        <section class="task-input-card">
+            <input type="text" id="title" placeholder="What's the main task?">
+            <textarea id="desc" rows="2" placeholder="Add some details (Optional)"></textarea>
+            
+            <div style="margin: 10px 0;">
+                <label style="font-size: 0.8rem; color: #64748b; display: block; margin-bottom: 5px;">Optional Deadline:</label>
+                <input type="date" id="end_date">
+            </div>
+
+            <button id="addTaskBtn" class="btn-main" onclick="addTask()">+ Create New Task</button>
+        </section>
+
+        <nav class="filter-tabs">
+            <button id="btn-All" class="active" onclick="setFilter('All')">All</button>
+            <button id="btn-Pending" onclick="setFilter('Pending')">Pending</button>
+            <button id="btn-Completed" onclick="setFilter('Completed')">Done</button>
+        </nav>
+
+        <div id="taskList" class="task-container">
+            </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

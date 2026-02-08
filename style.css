@@ -1,0 +1,225 @@
+:root {
+    --primary: #6366f1;
+    --primary-hover: #4f46e5;
+    --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --danger: #ef4444;
+    --success: #22c55e;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    color: #1e293b;
+}
+
+/* --- AUTH PAGES (Login/Signup Centering) --- */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-card {
+    background: white;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px; /* Prevents stretching */
+    text-align: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.auth-card h2 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+}
+
+.auth-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #64748b;
+    text-decoration: none;
+}
+
+.auth-link b { color: var(--primary); }
+
+/* --- DASHBOARD LAYOUT --- */
+.dashboard-wrapper {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.glass-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.logout-btn {
+    text-decoration: none;
+    color: var(--danger);
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 10px;
+    background: #fee2e2;
+    transition: 0.2s;
+}
+
+.logout-btn:hover { background: #fecaca; }
+
+/* --- PROGRESS BAR --- */
+.progress-section { margin-bottom: 30px; }
+.progress-track {
+    background: #cbd5e1;
+    height: 12px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.progress-fill-logic {
+    height: 100%;
+    background: var(--primary);
+    transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* --- INPUTS & BUTTONS --- */
+.task-input-card {
+    background: white;
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 25px;
+}
+
+input, textarea {
+    width: 100%;
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.btn-main {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-main:hover { background: var(--primary-hover); }
+.btn-main:active { transform: scale(0.98); }
+
+/* --- FILTER TABS --- */
+.filter-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.filter-tabs button {
+    flex: 1;
+    background: #f1f5f9;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #64748b;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.filter-tabs button.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* --- TASK CARDS --- */
+.task-card {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: var(--card-shadow);
+    animation: slideIn 0.3s ease-out;
+}
+
+.task-card.Completed {
+    border-left: 5px solid var(--success);
+}
+
+/* Subtask UI */
+.subtask-section {
+    margin-top: 12px;
+    padding-left: 10px;
+    border-left: 2px dashed #e2e8f0;
+}
+
+.sub-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    color: #94a3b8;
+}
+
+.deadline-badge {
+    background: #fee2e2;
+    color: var(--danger);
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+/* --- UTILS --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-done {
+    background: #f1f5f9;
+    color: var(--primary);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
