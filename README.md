@@ -1,8 +1,6 @@
-# ✅ StepWise - Task Management Application
+#  Task Management Application
 
-**StepWise** is a full-stack Flask-based task management application built for organized and efficient multi-user task tracking.  
-It supports **secure authentication**, **hierarchical tasks with subtasks**, **deadline management**, and **real-time progress tracking** with a modern responsive UI.
-
+Task Manager is a full-stack Flask application designed for organized, multi-user task management. It features a modern, "glassmorphism" UI, real-time progress tracking, and a hierarchical task-subtask structure.
 ---
 
 ## ✨ Features
